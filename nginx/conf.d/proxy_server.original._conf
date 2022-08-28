@@ -1,0 +1,8 @@
+server {
+    listen       80 default_server;
+
+    # let's incoming request /upstream pass to /internal of upstream server
+    location /upstream {
+        proxy_pass http://upstream:8000/internal/;
+    }
+}
